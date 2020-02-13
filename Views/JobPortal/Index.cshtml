@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>viewbag</h2>
+
+<ul>
+    @foreach (JobPortal_Data.JobSearcher i in ViewBag.JobSearcher)
+    {       
+    <li>First Name:@i.SearcherFirstName</li>
+    <li>Last Name:@i.SearcherLastName</li>
+    <li>Phone Number:@i.SearcherPhone</li>
+    <li>Graduation:@i.SearcherGraduation</li>
+    <text>  <&nbsp> </&nbsp> </text>
+    }
+    </ul>   
+
+
