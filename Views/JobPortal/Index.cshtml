@@ -1,19 +1,44 @@
 ﻿
+@model IEnumerable<JobPortal_Data.JobSearcher>
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Home";
 }
 
-<h2>viewbag</h2>
+<h2>Home</h2>
+@Html.ActionLink("Add", "Create")
+<br />
+<table cellpadding="10" border="1">
+    <tr>
+        <th>SeacherId</th>
+        <th>SearcherFN</th>
+        <th>SearcherLN</th>
+        <th>SearcherPhone</th>
+        <th>SearcherGraduation</th>
+        <th>Action</th>
+    </tr>
 
-<ul>
-    @foreach (JobPortal_Data.JobSearcher i in ViewBag.JobSearcher)
-    {       
-    <li>First Name:@i.SearcherFirstName</li>
-    <li>Last Name:@i.SearcherLastName</li>
-    <li>Phone Number:@i.SearcherPhone</li>
-    <li>Graduation:@i.SearcherGraduation</li>
-    <text>  <&nbsp> </&nbsp> </text>
+    @foreach (JobPortal_Data.JobSearcher item in (List<JobPortal_Data.JobSearcher>)@Model)
+    {
+
+        <tr>
+            <td>@item.SearcherId</td>
+
+
+            <td>@item.SearcherFirstName</td>
+
+            <td>@item.SearcherLastName</td>
+
+            <td>@item.SearcherGraduation</td>
+
+            <td>@item.SearcherPhone</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SearcherId })
+                @Html.ActionLink("Delete", "Delete", new { id = item.SearcherId })
+            </td>
+        </tr>
+
+
+
     }
-    </ul>   
-
-
+</table>

@@ -1,0 +1,70 @@
+﻿@model JobPortal_Data.JobSearcher
+
+@{
+    ViewBag.Title = "Create";
+}
+<head>
+    <style>
+        .alert{
+            color:blue;
+        }
+    </style>
+</head>
+<h2>Create New Restaurant</h2>
+<br />
+@using (Html.BeginForm("Create","JobPortal",FormMethod.Post))
+{
+<table cellpadding="10">
+    <tr>
+        <td>
+            @Html.Label("JobSeacher Id")
+        </td>
+        <td>
+            @Html.TextBoxFor(Model => Model.SearcherId)
+        </td>
+        <td>
+            @Html.ValidationMessageFor(Model => Model.SearcherId, "", new { @class = "text-alert" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(Model => Model.SearcherFirstName)
+        </td>
+        <td>
+            @Html.EditorFor(Model => Model.SearcherFirstName)
+        </td>
+        <td>
+            @Html.ValidationMessageFor(Model => Model.SearcherFirstName, "", new { @class = "text-alert" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(Model => Model.SearcherLastName)
+        </td>
+        <td>
+            @Html.EditorFor(Model => Model.SearcherLastName)
+        </td>
+        <td>
+            @Html.ValidationMessageFor(Model => Model.SearcherLastName, "", new { @class = "text-alert" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.LabelFor(Model => Model.SearcherPhone)
+        </td>
+        <td>
+            @Html.EditorFor(Model => Model.SearcherPhone)
+        </td>
+        <td>
+            @Html.ValidationMessageFor(Model => Model.SearcherPhone, "", new { @class = "text-alert" })
+        </td>
+    </tr>
+    <td>
+        @Html.ActionLink("Back to List","Index")
+    </td>
+    <td>
+        <input type="submit" id="submit" />
+    </td>
+
+</table>
+}

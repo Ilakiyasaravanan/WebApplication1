@@ -19,7 +19,7 @@ namespace WebApplication1.Controllers
         {
             IEnumerable<JobSearcher> searcher = jobSearcherRepository.GetJobSearchers();
             TempData["JobSearcher"] = searcher ;
-            return View();
+            return View("ModelView",searcher);
         }
         public ActionResult Index1()
         {

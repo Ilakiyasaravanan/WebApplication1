@@ -105,9 +105,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Views\JobPortal\Index1.cshtml" />
-    <Content Include="Views\TempData\Index2.cshtml" />
     <Content Include="Views\TempData\Index1.cshtml" />
-    <Content Include="Views\JobPortal\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -134,6 +132,9 @@
     <Content Include="Views\JobPortal\Index.cshtml" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\JobPortal\Create.cshtml" />
+    <Content Include="Views\JobPortal\Edit.cshtml" />
+    <Content Include="Views\JobPortal\Home.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,90 @@
+﻿@model JobPortal_Data.JobSearcher
+
+@{
+    ViewBag.Title = "Edit Restaurant";
+}
+
+<h2>Edit Restaurant</h2>
+@using (Html.BeginForm("Update", "JobPortal", FormMethod.Post))
+{
+    Html.HiddenFor(model => model.SearcherId);
+<table cellpadding="5">
+    <tr>
+        <td>
+            JobSearcher FirstName
+        </td>
+        <td>
+            @Html.EditorFor(Model => Model.SearcherFirstName)
+        </td>
+        <td>
+            @Html.ValidationMessageFor(Model => Model.SearcherFirstName, "", new { @class = "text-alert" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.ActionLink("Cancel", "Index")
+        </td>
+        <td>
+            <input type="submit" value="submit" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            JobSearcher LastName
+        </td>
+        <td>
+            @Html.EditorFor(Model => Model.SearcherLastName)
+        </td>
+        <td>
+            @Html.ValidationMessageFor(Model => Model.SearcherLastName, "", new { @class = "text-alert" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.ActionLink("Cancel", "Index")
+        </td>
+        <td>
+            <input type="submit" value="submit" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            JobSearcher Graduation
+        </td>
+        <td>
+            @Html.EditorFor(Model => Model.SearcherGraduation)
+        </td>
+        <td>
+            @Html.ValidationMessageFor(Model => Model.SearcherGraduation, "", new { @class = "text-alert" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.ActionLink("Cancel", "Index")
+        </td>
+        <td>
+            <input type="submit" value="submit" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            JobSearcher PhoneNumber
+        </td>
+        <td>
+            @Html.EditorFor(Model => Model.SearcherPhone)
+        </td>
+        <td>
+            @Html.ValidationMessageFor(Model => Model.SearcherPhone, "", new { @class = "text-alert" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.ActionLink("Cancel", "Index")
+        </td>
+        <td>
+            <input type="submit" value="submit" />
+        </td>
+    </tr>
+
+</table>
+}

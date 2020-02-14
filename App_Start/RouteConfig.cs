@@ -16,21 +16,21 @@ namespace WebApplication1
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-              name: "TempSample",
-              url: "Temp",
-              defaults: new { controller = "JobPortal", action = "Index2", id = UrlParameter.Optional }
-          );
-            routes.MapRoute(
-             name: "ViewBagSample",
-             url: "Bag",
-             defaults: new { controller = "JobPortal", action = "Index", id = UrlParameter.Optional }
-         );
+         //   routes.MapRoute(
+         //     name: "Create",
+         //     url: "Create",
+         //     defaults: new { controller = "JobPortal", action = "Create", id = UrlParameter.Optional }
+         // );
+         //   routes.MapRoute(
+         //    name: "View",
+         //    url: "Delete",
+         //    defaults: new { controller = "JobPortal", action = "Delete", id = UrlParameter.Optional }
+         //);
 
             routes.MapRoute(
-                name: "Default",
-                url: "Data",
-                defaults: new { controller = "JobPortal", action = "Index1", id = UrlParameter.Optional }
+              name: "Default",
+               url: "{controller}/{action}/{id}",
+                defaults: new { controller = "JobPortal", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
