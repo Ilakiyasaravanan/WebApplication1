@@ -15,7 +15,7 @@ namespace WebApplication1.Controllers
         {
             jobSearcherRepository = new JobSearcherRepository();
         }
-        //[ActionName("GetAll")]
+      
         public ActionResult Index()
         {
             IEnumerable<JobSearcher> searcher = jobSearcherRepository.GetJobSearchers();
@@ -23,33 +23,26 @@ namespace WebApplication1.Controllers
             //ViewBag.JobSearcher = searcher;
             return View("Index", searcher);
         }
-        public ActionResult Index1()
-        {
-            IEnumerable<JobSearcher> searcher = jobSearcherRepository.GetJobSearchers();
-            ViewData["JobSearcher"] = searcher;
-            ViewBag.JobSearcher = searcher;
-            TempData["JobSearcher"] = searcher;
-            return RedirectToAction("Index2");
-        }
-        public ActionResult Index2()
-        {
-            return View();
-        }
+
         [HttpGet]
-        public ActionResult Create()
+        [ActionName("Create")]
+        public ActionResult Create_Get()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Create(JobSearcher jobSearcher)
+        [ActionName("Create")]
+        public ActionResult Create_Post()
         {
             if (ModelState.IsValid)
             {
+                JobSearcher jobSearcher = new JobSearcher();
+                UpdateModel<JobSearcher>(jobSearcher);
                 jobSearcherRepository.Add(jobSearcher);
-                TempData["Message"] = "Added";
+                TempData["Message"] = "Added successfully";
                 return RedirectToAction("Index");
             }
-            return View(jobSearcher);
+            return View();
         }
         [HttpGet]
         public ActionResult Edit(int id)
@@ -65,10 +58,13 @@ namespace WebApplication1.Controllers
             return RedirectToAction("Index");
         }
         [HttpPost]
-        public ActionResult Update(JobSearcher job)
+        public ActionResult Update()    
         {
+            JobSearcher job = new JobSearcher();
             if (ModelState.IsValid)
             {
+                
+                TryUpdateModel<JobSearcher>(job);
                 jobSearcherRepository.Update(job);
                 TempData["Message"] = "Updated succesfully";
                 return RedirectToAction("Index");
@@ -76,4 +72,18 @@ namespace WebApplication1.Controllers
             return View("Edit", job);
         }
     }
-}
+}        //public ActionResult Index1()
+         //{
+         //    IEnumerable<JobSearcher> searcher = jobSearcherRepository.GetJobSearchers();
+         //    ViewData["JobSearcher"] = searcher;
+         //    ViewBag.JobSearcher = searcher;
+         //    TempData["JobSearcher"] = searcher;
+         //    return RedirectToAction("Index2");
+         //}        //public ActionResult Index2()
+         //{
+         //    return View();
+         //}
+         //public ActionResult Index2()
+         //{
+         //    return View();
+         //}

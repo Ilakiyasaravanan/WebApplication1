@@ -22,9 +22,9 @@
         <td>
             @Html.TextBoxFor(Model => Model.SearcherId)
         </td>
-        <td>
+        @*<td>
             @Html.ValidationMessageFor(Model => Model.SearcherId, "", new { @class = "text-alert" })
-        </td>
+        </td>*@
     </tr>
     <tr>
         <td>
@@ -33,9 +33,9 @@
         <td>
             @Html.EditorFor(Model => Model.SearcherFirstName)
         </td>
-        <td>
+        @*<td>
             @Html.ValidationMessageFor(Model => Model.SearcherFirstName, "", new { @class = "text-alert" })
-        </td>
+        </td>*@
     </tr>
     <tr>
         <td>
@@ -44,9 +44,9 @@
         <td>
             @Html.EditorFor(Model => Model.SearcherLastName)
         </td>
-        <td>
+        @*<td>
             @Html.ValidationMessageFor(Model => Model.SearcherLastName, "", new { @class = "text-alert" })
-        </td>
+        </td>*@
     </tr>
     <tr>
         <td>
@@ -55,10 +55,11 @@
         <td>
             @Html.EditorFor(Model => Model.SearcherPhone)
         </td>
-        <td>
+        @*<td>
             @Html.ValidationMessageFor(Model => Model.SearcherPhone, "", new { @class = "text-alert" })
-        </td>
+        </td>*@
     </tr>
+
     <td>
         @Html.ActionLink("Back to List","Index")
     </td>

@@ -16,17 +16,6 @@ namespace WebApplication1
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-         //   routes.MapRoute(
-         //     name: "Create",
-         //     url: "Create",
-         //     defaults: new { controller = "JobPortal", action = "Create", id = UrlParameter.Optional }
-         // );
-         //   routes.MapRoute(
-         //    name: "View",
-         //    url: "Delete",
-         //    defaults: new { controller = "JobPortal", action = "Delete", id = UrlParameter.Optional }
-         //);
-
             routes.MapRoute(
               name: "Default",
                url: "{controller}/{action}/{id}",

@@ -21,22 +21,23 @@
     @foreach (JobPortal_Data.JobSearcher item in (List<JobPortal_Data.JobSearcher>)@Model)
     {
 
-        <tr>
-            <td>@item.SearcherId</td>
+<tr>
+    <td>@item.SearcherId</td>
 
 
-            <td>@item.SearcherFirstName</td>
+    <td>@item.SearcherFirstName</td>
 
-            <td>@item.SearcherLastName</td>
+    <td>@item.SearcherLastName</td>
+    <td>@item.SearcherPhone</td>
 
-            <td>@item.SearcherGraduation</td>
+    <td>@item.SearcherGraduation</td>
 
-            <td>@item.SearcherPhone</td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.SearcherId })
-                @Html.ActionLink("Delete", "Delete", new { id = item.SearcherId })
-            </td>
-        </tr>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.SearcherId })
+        @Html.ActionLink("Delete", "Delete", new { id = item.SearcherId })
+    </td>
+</tr>
 
 
 
